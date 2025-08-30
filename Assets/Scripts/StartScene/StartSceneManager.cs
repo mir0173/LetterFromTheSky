@@ -211,7 +211,7 @@ ESC 를 눌러서 종료";
                 .OnComplete(() =>
                 {
                     eggcanvas.blocksRaycasts = true;
-                    eggcanvas.DOFade(0, 1f).SetDelay(7)
+                    eggcanvas.DOFade(0, 2).SetDelay(7)
                     .OnStart(() =>
                     {
                         eggtext.text = "";

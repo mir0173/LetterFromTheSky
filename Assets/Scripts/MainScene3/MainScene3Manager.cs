@@ -150,7 +150,7 @@ public class MainScene3Manager : MonoBehaviour
         }
         if (key == 1 && setkey == 21)
         {
-            choose1.text = "당신은 계속 맑은 길로 나아간다.";
+            choose1.text = "당신은 계속 맑은 길로 나아간다";
             choose11.text = "앞으로 나아가기(맑음)";
             choosecanvas1.DOFade(1, 2)
             .OnComplete(() =>
@@ -213,7 +213,7 @@ public class MainScene3Manager : MonoBehaviour
         }
         else if (key == 1 && setkey == 24)
         {
-            choose1.text = "당신은 계속 구름 낀 길로 나아간다.";
+            choose1.text = "당신은 계속 구름 낀 길로 나아간다";
             choose11.text = "앞으로 나아가기(구름)";
             choosecanvas1.DOFade(1, 2)
             .OnComplete(() =>
@@ -238,7 +238,7 @@ public class MainScene3Manager : MonoBehaviour
         }
         else if (key == 1 && setkey == 25)
         {
-            choose1.text = "당신은 계속 비가 내리는 길로 나아간다.";
+            choose1.text = "당신은 계속 비가 내리는 길로 나아간다";
             choose11.text = "앞으로 나아가기(비)";
             choosecanvas1.DOFade(1, 2)
             .OnComplete(() =>

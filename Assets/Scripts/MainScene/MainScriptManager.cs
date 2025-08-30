@@ -20,7 +20,7 @@ public class MainScriptManager : MonoBehaviour
         for (int i = 0; i < DialogueManager.lines1[index].detail.Length; i++)
         {
             script.text = DialogueManager.lines1[index].detail[..(i + 1)];
-            yield return new WaitForSeconds(0.033f);
+            yield return new WaitForSeconds(0.05f);
         }
 
         isCantalk = true; 
