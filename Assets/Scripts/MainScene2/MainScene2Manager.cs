@@ -200,7 +200,7 @@ public class MainScene2Manager : MonoBehaviour
         }
         else if (key == 2 && setkey == 11)
         {
-            choose1.text = "당신은 계속 맑은 길로 나아간다";
+            choose1.text = "바람막이를 가져오지 않은 당신은 계속 맑은 길로 나아간다";
             choose11.text = "앞으로 나아가기(맑음)";
             choosecanvas1.DOFade(1, 2)
             .OnComplete(() =>
