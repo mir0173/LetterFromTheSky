@@ -145,6 +145,7 @@ public class StartSceneManager : MonoBehaviour
                 key = true;
                 if (Input.GetMouseButtonDown(0))
                 {
+                    MouseOnUI.gameObj.transform.DOScale(1f, 0.5f);
                     Isrec = true;
                     Isrecoding = true;
                     text7.text = "ESC를 눌러 종료";
@@ -162,6 +163,7 @@ public class StartSceneManager : MonoBehaviour
                 key = true;
                 if (Input.GetMouseButtonDown(0))
                 {
+                    MouseOnUI.gameObj.transform.DOScale(1f, 0.5f);
                     Isexp = true;
                     Isexping = true;
                     text.text = @"'하늘에게 받은 편지'는 날씨에 따라 변하는 기억을 통해 
