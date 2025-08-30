@@ -195,7 +195,7 @@ public class MainScene3Manager : MonoBehaviour
                         key = 31;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
-                        SceneManager.LoadScene("MainScene3");
+                        SceneManager.LoadScene("MainScene4");
                     });
                 }
                 if (MouseOnUI.gameObj.name == "script2" && Input.GetMouseButtonDown(0))
@@ -206,7 +206,7 @@ public class MainScene3Manager : MonoBehaviour
                        key = 33;
                        PlayerPrefs.SetInt("key", key);
                        PlayerPrefs.Save();
-                       SceneManager.LoadScene("MainScene3");
+                       SceneManager.LoadScene("MainScene4");
                    });
                 }
             }
