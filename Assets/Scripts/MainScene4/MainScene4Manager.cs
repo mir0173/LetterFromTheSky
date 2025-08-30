@@ -89,11 +89,8 @@ public class MainScene4Manager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+            DOTween.KillAll();
+            SceneManager.LoadScene("StartScene");
         }
         if (key == 0 && setkey == 31 && textindex < 9 && Input.GetMouseButtonUp(0) && MainScript4Manager.isCantalk)
         {
@@ -155,8 +152,8 @@ public class MainScene4Manager : MonoBehaviour
         if (key == 1 && setkey == 31 && PlayerPrefs.GetInt("take1") == 1)
         {
             choose2.text = "당신은 갈림길에 도착했고 또다시 선택의 시간이 다가왔다";
-            choose21.text = "왼쪽으로 가기(맑음)";
-            choose22.text = "오른쪽으로 가기(바람)";
+            choose21.text = "방으로 가기(맑음)";
+            choose22.text = "위층으로 가기(바람)";
             choosecanvas2.DOFade(1, 2)
             .OnComplete(() =>
             {
@@ -172,6 +169,7 @@ public class MainScene4Manager : MonoBehaviour
                         key = 41;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene5");
                     });
                 }
@@ -183,6 +181,7 @@ public class MainScene4Manager : MonoBehaviour
                        key = 42;
                        PlayerPrefs.SetInt("key", key);
                        PlayerPrefs.Save();
+                       DOTween.KillAll();
                        SceneManager.LoadScene("MainScene5");
                    });
                 }
@@ -207,6 +206,7 @@ public class MainScene4Manager : MonoBehaviour
                         key = 41;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene5");
                     });
                 }
@@ -231,6 +231,7 @@ public class MainScene4Manager : MonoBehaviour
                         key = 43;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene5");
                     });
                 }
@@ -256,6 +257,7 @@ public class MainScene4Manager : MonoBehaviour
                         key = 41;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene5");
                     });
                 }
@@ -267,6 +269,7 @@ public class MainScene4Manager : MonoBehaviour
                        key = 44;
                        PlayerPrefs.SetInt("key", key);
                        PlayerPrefs.Save();
+                       DOTween.KillAll();
                        SceneManager.LoadScene("MainScene5");
                    });
                 }
@@ -291,6 +294,7 @@ public class MainScene4Manager : MonoBehaviour
                         key = 44;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene5");
                     });
                 }
@@ -316,6 +320,7 @@ public class MainScene4Manager : MonoBehaviour
                         key = 45;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene5");
                     });
                 }
@@ -327,6 +332,7 @@ public class MainScene4Manager : MonoBehaviour
                        key = 46;
                        PlayerPrefs.SetInt("key", key);
                        PlayerPrefs.Save();
+                       DOTween.KillAll();
                        SceneManager.LoadScene("MainScene5");
                    });
                 }

@@ -107,11 +107,8 @@ public class MainScene5Manager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+            DOTween.KillAll();
+            SceneManager.LoadScene("StartScene");
         }
         if (key == 0 && setkey == 41 && textindex < 8 && Input.GetMouseButtonUp(0) && MainScript5Manager.isCantalk)
         {
@@ -219,6 +216,7 @@ public class MainScene5Manager : MonoBehaviour
                         key = 51;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("EndScene");
                     });
                 }
@@ -243,6 +241,7 @@ public class MainScene5Manager : MonoBehaviour
                         key = 52;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("EndScene");
                     });
                 }
@@ -267,6 +266,7 @@ public class MainScene5Manager : MonoBehaviour
                         key = 53;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("EndScene");
                     });
                 }
@@ -291,6 +291,7 @@ public class MainScene5Manager : MonoBehaviour
                         key = 54;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("EndScene");
                     });
                 }
@@ -315,6 +316,7 @@ public class MainScene5Manager : MonoBehaviour
                         key = 55;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("EndScene");
                     });
                 }
@@ -339,6 +341,7 @@ public class MainScene5Manager : MonoBehaviour
                         key = 56;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("EndScene");
                     });
                 }

@@ -89,11 +89,8 @@ public class MainScene3Manager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+            DOTween.KillAll();
+            SceneManager.LoadScene("StartScene");
         }
         if (key == 0 && setkey == 21 && textindex < 8 && Input.GetMouseButtonUp(0) && MainScript3Manager.isCantalk)
         {
@@ -111,7 +108,7 @@ public class MainScene3Manager : MonoBehaviour
         }
         if (key == 0 && setkey == 22 && textindex < 9 && Input.GetMouseButtonUp(0) && MainScript3Manager.isCantalk)
         {
-            StartCoroutine(MainScript3Manager.PrintScript21(textindex++));
+            StartCoroutine(MainScript3Manager.PrintScript22(textindex++));
         }
         else if (key == 0 && setkey == 22 && textindex == 9 && Input.GetMouseButtonUp(0) && MainScript3Manager.isCantalk)
         {
@@ -125,7 +122,7 @@ public class MainScene3Manager : MonoBehaviour
         }
         if (key == 0 && setkey == 24 && textindex < 7 && Input.GetMouseButtonUp(0) && MainScript3Manager.isCantalk)
         {
-            StartCoroutine(MainScript3Manager.PrintScript21(textindex++));
+            StartCoroutine(MainScript3Manager.PrintScript24(textindex++));
         }
         else if (key == 0 && setkey == 24 && textindex == 7 && Input.GetMouseButtonUp(0) && MainScript3Manager.isCantalk)
         {
@@ -139,7 +136,7 @@ public class MainScene3Manager : MonoBehaviour
         }
         if (key == 0 && setkey == 25 && textindex < 9 && Input.GetMouseButtonUp(0) && MainScript3Manager.isCantalk)
         {
-            StartCoroutine(MainScript3Manager.PrintScript21(textindex++));
+            StartCoroutine(MainScript3Manager.PrintScript25(textindex++));
         }
         else if (key == 0 && setkey == 25 && textindex == 9 && Input.GetMouseButtonUp(0) && MainScript3Manager.isCantalk)
         {
@@ -170,6 +167,7 @@ public class MainScene3Manager : MonoBehaviour
                         key = 31;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene4");
                     });
                 }
@@ -195,6 +193,7 @@ public class MainScene3Manager : MonoBehaviour
                         key = 31;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene4");
                     });
                 }
@@ -206,6 +205,7 @@ public class MainScene3Manager : MonoBehaviour
                        key = 33;
                        PlayerPrefs.SetInt("key", key);
                        PlayerPrefs.Save();
+                       DOTween.KillAll();
                        SceneManager.LoadScene("MainScene4");
                    });
                 }
@@ -230,6 +230,7 @@ public class MainScene3Manager : MonoBehaviour
                         key = 34;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene4");
                     });
                 }
@@ -254,6 +255,7 @@ public class MainScene3Manager : MonoBehaviour
                         key = 35;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene4");
                     });
                 }

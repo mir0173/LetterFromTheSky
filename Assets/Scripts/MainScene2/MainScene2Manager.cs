@@ -25,6 +25,7 @@ public class MainScene2Manager : MonoBehaviour
     {
         textindex = 0;
         take1 = false;
+        key = -1;
         setkey = PlayerPrefs.GetInt("key");
         if (setkey == 11)
         {
@@ -48,6 +49,16 @@ public class MainScene2Manager : MonoBehaviour
         .OnComplete(() =>
         {
             fadeimg.blocksRaycasts = false;
+            key = 0;
+            if (setkey == 14)
+            {
+                textcanvas.DOFade(1, 1)
+               .OnComplete(() =>
+               {
+                   textcanvas.blocksRaycasts = true;
+                   StartCoroutine(MainScript2Manager.PrintScript14(textindex++));
+               });
+            }
         });   
     }
     void Start()
@@ -60,11 +71,8 @@ public class MainScene2Manager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+            DOTween.KillAll();
+            SceneManager.LoadScene("StartScene");
         }
         if (key == 0 && setkey == 11)
         {
@@ -76,7 +84,7 @@ public class MainScene2Manager : MonoBehaviour
             .OnComplete(() =>
             {
             });
-            if (MouseOnUI.isMouseOver && choosecanvas2.blocksRaycasts == true)
+            if (MouseOnUI.isMouseOver)
             {
                 if (MouseOnUI.gameObj.name == "script1" && Input.GetMouseButtonDown(0))
                 {
@@ -122,16 +130,6 @@ public class MainScene2Manager : MonoBehaviour
                 }
             }
         }
-        else if (key == 0)
-        {
-            textcanvas.DOFade(1, 1)
-            .OnComplete(() =>
-            {
-                textcanvas.blocksRaycasts = true;
-                StartCoroutine(MainScript2Manager.PrintScript14(textindex++));
-                key = 1;
-            });
-        }
         if (key == 1 && setkey == 11 && textindex < 9 && Input.GetMouseButtonUp(0) && MainScript2Manager.isCantalk)
         {
             StartCoroutine(MainScript2Manager.PrintScript11(textindex++));
@@ -146,11 +144,11 @@ public class MainScene2Manager : MonoBehaviour
                 key = 2;
             });
         }
-        if (key == 1 && setkey == 14 && textindex < 9 && Input.GetMouseButtonUp(0) && MainScript2Manager.isCantalk)
+        if (key == 0 && setkey == 14 && textindex < 9 && Input.GetMouseButtonUp(0) && MainScript2Manager.isCantalk)
         {
             StartCoroutine(MainScript2Manager.PrintScript14(textindex++));
         }
-        else if (key == 1 && setkey == 14 && textindex == 9 && Input.GetMouseButtonUp(0) && MainScript2Manager.isCantalk)
+        else if (key == 0 && setkey == 14 && textindex == 9 && Input.GetMouseButtonUp(0) && MainScript2Manager.isCantalk)
         {
             textcanvas.DOFade(0, 1)
             .OnComplete(() =>
@@ -182,6 +180,7 @@ public class MainScene2Manager : MonoBehaviour
                         key = 21;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene3");
                     });
                 }
@@ -193,6 +192,7 @@ public class MainScene2Manager : MonoBehaviour
                        key = 22;
                        PlayerPrefs.SetInt("key", key);
                        PlayerPrefs.Save();
+                       DOTween.KillAll();
                        SceneManager.LoadScene("MainScene3");
                    });
                 }
@@ -217,6 +217,7 @@ public class MainScene2Manager : MonoBehaviour
                         key = 21;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene3");
                     });
                 }
@@ -242,6 +243,7 @@ public class MainScene2Manager : MonoBehaviour
                         key = 24;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene3");
                     });
                 }
@@ -253,6 +255,7 @@ public class MainScene2Manager : MonoBehaviour
                        key = 25;
                        PlayerPrefs.SetInt("key", key);
                        PlayerPrefs.Save();
+                       DOTween.KillAll();
                        SceneManager.LoadScene("MainScene3");
                    });
                 }

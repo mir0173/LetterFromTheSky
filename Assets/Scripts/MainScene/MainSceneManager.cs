@@ -44,11 +44,8 @@ public class MainSceneManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+            DOTween.KillAll();
+            SceneManager.LoadScene("StartScene");
         }
         if (key == 0 && textindex < 12 && Input.GetMouseButtonUp(0) && MainScriptManager.isCantalk)
         {
@@ -74,7 +71,7 @@ public class MainSceneManager : MonoBehaviour
             .OnComplete(() =>
             {
             });
-            if (MouseOnUI.isMouseOver && choosecanvas.blocksRaycasts == true)
+            if (MouseOnUI.isMouseOver && MouseOnUI.gameObj != null)
             {
                 if (MouseOnUI.gameObj.name == "script1" && Input.GetMouseButtonDown(0))
                 {
@@ -84,6 +81,7 @@ public class MainSceneManager : MonoBehaviour
                         key = 11;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene2");
                     });
                 }
@@ -95,6 +93,7 @@ public class MainSceneManager : MonoBehaviour
                         key = 14;
                         PlayerPrefs.SetInt("key", key);
                         PlayerPrefs.Save();
+                        DOTween.KillAll();
                         SceneManager.LoadScene("MainScene2");
                     });
                 }
